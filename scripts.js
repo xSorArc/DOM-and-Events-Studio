@@ -8,8 +8,8 @@ function init() {
 
     const takeoff = document.getElementById("takeoff");
     takeoff.addEventListener("click", event => {
-        window.confirm("Confirm that the shuttle is ready for takeoff.");   //2a
-        if (true) {
+        let response = window.confirm("Confirm that the shuttle is ready for takeoff.");   //2a
+        if (response) {
             status.innerHTML = "Shuttle in flight."                         //2b
             shuttleBackground.style.background = "blue";                    //2c
             height.innerHTML = 10000;                                       //2d

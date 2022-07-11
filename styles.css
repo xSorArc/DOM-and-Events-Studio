@@ -3,7 +3,7 @@
     display: inline-block;
     height: 80%;
     width: 40%;
-    position: absolute;
+    position: relative;
 }
 
 #flightStatus {
