@@ -8,8 +8,8 @@ function init() {
 
     const takeoff = document.getElementById("takeoff");
     takeoff.addEventListener("click", event => {
-        let response = window.confirm("Confirm that the shuttle is ready for takeoff.");   //2a
-        if (response) {
+        let response1 = window.confirm("Confirm that the shuttle is ready for takeoff.");   //2a
+        if (response1) {
             status.innerHTML = "Shuttle in flight."                         //2b
             shuttleBackground.style.background = "blue";                    //2c
             height.innerHTML = 10000;                                       //2d
@@ -26,8 +26,8 @@ function init() {
 
     const abort = document.getElementById("missionAbort");
     abort.addEventListener("click", event => {
-        window.confirm("Confirm that you want to abort the mission.");      //4a
-        if (true) {
+        let response2 = window.confirm("Confirm that you want to abort the mission.");      //4a
+        if (response2) {
             status.innerHTML = "Mission aborted.";                          //4b
             shuttleBackground.style.background = "";                        //4c
             height.innerHTML = 0;                                           //4d
