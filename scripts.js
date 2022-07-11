@@ -1,9 +1,10 @@
 // Write your JavaScript code here.
 // Remember to pay attention to page loading!
 function init() {
-    const status = document.getElementById("flightStatus");
-    const shuttleBackground = document.getElementById("shuttleBackground");
     const height = document.getElementById("spaceShuttleHeight");
+    const rocket = document.getElementById("rocket");
+    const shuttleBackground = document.getElementById("shuttleBackground");
+    const status = document.getElementById("flightStatus");
 
     const takeoff = document.getElementById("takeoff");
     takeoff.addEventListener("click", event => {
@@ -32,6 +33,22 @@ function init() {
             height.innerHTML = 0;                                           //4d
         }
     })
+    
+    const up = document.getElementById("up");
+    up.addEventListener("click", event => {
+        height.innerHTML + 10000;
+        rocket.style.top + 10;
+    })
+
+    const down = document.getElementById("down");
+    down.addEventListener("click", event => {
+        height.innerHTML - 10000;
+        rocket.style.top - 10;
+    })
+
+    const left = document.getElementById("left");
+    const right = document.getElementById("right");
+
 }
 
 window.addEventListener("load", init)
