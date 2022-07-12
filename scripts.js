@@ -33,22 +33,31 @@ function init() {
             height.innerHTML = 0;                                           //4d
         }
     })
+
+    rocket.style.position = 'absolute';
+    rocket.style.left = '0px';
+    rocket.style.bottom = '0px';
     
     const up = document.getElementById("up");
     up.addEventListener("click", event => {
-        height.innerHTML + 10000;
-        rocket.style.top + 10;
+        height.innerHTML = 10000; //Fix logic error.
+        //Add code to move image up 10px
     })
 
     const down = document.getElementById("down");
     down.addEventListener("click", event => {
-        height.innerHTML - 10000;
-        rocket.style.top - 10;
+        height.innerHTML -= 10000;
+        rocket.style.bottom + 10;
     })
 
     const left = document.getElementById("left");
+    left.addEventListener("click", event => {
+        parseInt(rocket.style.left) + 10;
+    })
     const right = document.getElementById("right");
-
+    right.addEventListener("click", event => {
+        rocket.style.right + 10;
+    })
 }
 
 window.addEventListener("load", init)
