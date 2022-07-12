@@ -10,27 +10,27 @@ function init() {
     takeoff.addEventListener("click", event => {
         let response1 = window.confirm("Confirm that the shuttle is ready for takeoff.");   //2a
         if (response1) {
-            status.innerHTML = "Shuttle in flight."                         //2b
-            shuttleBackground.style.background = "blue";                    //2c
-            height.innerHTML = 10000;                                       //2d
+            status.innerHTML = "Shuttle in flight."                                         //2b
+            shuttleBackground.style.background = "blue";                                    //2c
+            height.innerHTML = 10000;                                                       //2d
         }
     })
 
     const land = document.getElementById("landing");
     land.addEventListener("click", event => {
-        window.alert("The shuttle is landing. Landing gear engaged.");      //3a
-        status.innerHTML = "The shuttle has landed.";                       //3b
-        shuttleBackground.style.background = "";                            //3c
-        height.innerHTML = 0;                                               //3d
+        window.alert("The shuttle is landing. Landing gear engaged.");                      //3a
+        status.innerHTML = "The shuttle has landed.";                                       //3b
+        shuttleBackground.style.background = "";                                            //3c
+        height.innerHTML = 0;                                                               //3d
     })
 
     const abort = document.getElementById("missionAbort");
     abort.addEventListener("click", event => {
         let response2 = window.confirm("Confirm that you want to abort the mission.");      //4a
         if (response2) {
-            status.innerHTML = "Mission aborted.";                          //4b
-            shuttleBackground.style.background = "";                        //4c
-            height.innerHTML = 0;                                           //4d
+            status.innerHTML = "Mission aborted.";                                          //4b
+            shuttleBackground.style.background = "";                                        //4c
+            height.innerHTML = 0;                                                           //4d
         }
     })
 
@@ -40,23 +40,23 @@ function init() {
     
     const up = document.getElementById("up");
     up.addEventListener("click", event => {
-        height.innerHTML = 10000; //Fix logic error.
-        //Add code to move image up 10px
+        //height.innerHTML = 10000; //Fix logic error.
+        rocket.style.top += '10px';
     })
 
     const down = document.getElementById("down");
     down.addEventListener("click", event => {
-        height.innerHTML -= 10000;
-        rocket.style.bottom + 10;
+        //height.innerHTML -= 10000;
+        rocket.style.bottom += '10px';
     })
 
     const left = document.getElementById("left");
     left.addEventListener("click", event => {
-        parseInt(rocket.style.left) + 10;
+        rocket.style.left += '10px';
     })
     const right = document.getElementById("right");
     right.addEventListener("click", event => {
-        rocket.style.right + 10;
+        rocket.style.right += '10px';
     })
 }
 
