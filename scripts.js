@@ -13,7 +13,9 @@ function init() {
         if (response1) {
             status.innerHTML = "Shuttle in flight."                                         //2b
             shuttleBackground.style.background = "blue";                                    //2c
-            height.innerHTML = 10000;                                                       //2d
+            let move = parseInt(height.innerHTML) + 10000;                                  //2d
+            height.innerHTML = move;
+            rocket.style.bottom = '10px';
         }
     })
 
@@ -23,7 +25,7 @@ function init() {
         status.innerHTML = "The shuttle has landed.";                                       //3b
         shuttleBackground.style.background = "";                                            //3c
         height.innerHTML = 0;                                                               //3d
-        rocket.style.left = '250px';
+        rocket.style.left = '250px';                                                        //Bonus #2
         rocket.style.bottom = '0px';
     })
 
@@ -43,27 +45,39 @@ function init() {
     
     const up = document.getElementById("up");
     up.addEventListener("click", event => {
-        height.innerHTML + 10000; //Fix logic error.
-        let move1 = parseInt(rocket.style.bottom) + 10 + 'px';
-        rocket.style.bottom = move1;
+        parseInt(height.innerHTML) + 10000;
+        if (height.innerHTML != "250000") {                                                 //Bonus #1
+            let move1 = parseInt(rocket.style.bottom) + 10 + 'px';
+            rocket.style.bottom = move1;
+            height.innerHTML = parseInt(height.innerHTML) + 10000;
+        }
     })
     const down = document.getElementById("down");
     down.addEventListener("click", event => {
-        height.innerHTML -= 10000;
-        let move2 = parseInt(rocket.style.bottom) - 10 + 'px';
-        rocket.style.bottom = move2;
+        parseInt(height.innerHTML) - 10000;
+        if (height.innerHTML != "0") {                                                      //Bonus #1
+            let move2 = parseInt(rocket.style.bottom) - 10 + 'px';
+            rocket.style.bottom = move2;
+            height.innerHTML = parseInt(height.innerHTML) - 10000;
+        }
     })
     const left = document.getElementById("left");
     left.addEventListener("click", event => {
-        width.innerHTML -= 10000;
-        let move3 = parseInt(rocket.style.left) - 10 + 'px';
-        rocket.style.left = move3;
+        parseInt(width.innerHTML) - 10000;
+        if (width.innerHTML != "-260000") {                                                 //Bonus #1
+            let move3 = parseInt(rocket.style.left) - 10 + 'px';
+            rocket.style.left = move3;
+            width.innerHTML = parseInt(width.innerHTML) - 10000;
+        }
     })
     const right = document.getElementById("right");
     right.addEventListener("click", event => {
-        width.innerHTML += 10000; //Fix logic error
-        let move4 = parseInt(rocket.style.left) + 10 + 'px';
-        rocket.style.left = move4;
+        parseInt(width.innerHTML) + 10000;
+        if (width.innerHTML != "300000") {                                                  //Bonus #1
+            let move4 = parseInt(rocket.style.left) + 10 + 'px';
+            rocket.style.left = move4;
+            width.innerHTML = parseInt(width.innerHTML) + 10000;
+        }
     })
 }
 
